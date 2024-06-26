@@ -1,0 +1,338 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  color: rgb(0, 0, 0);
+}
+
+.MuiBox-root{
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white !important;
+}
+
+body{
+  background-color: white;
+}
+
+#root {
+    text-align: center;
+}
+
+p{
+  text-align: justify;
+}
+
+img,button,input,a,iframe,br{
+  user-select: none;
+}
+
+::selection {
+  background-color: #8d0000;
+  color: white;
+}
+
+.TitPelis{
+  color: #d4d4d4;
+}
+
+.sliderIn{
+  margin-left: 40%;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.493);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #5a5a5a2a;
+}
+
+a {
+  /* Establece la transición para la transformación */
+  transition: transform 0.3s ease;
+}
+
+a:hover {
+  /* Aumenta el tamaño del elemento en un factor de 1.5 */
+  transform: scale(1.1);
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* Ancho del track */
+}
+
+ ::-webkit-scrollbar-thumb {
+  background-color: #777777;
+  border-radius: 5px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6d6d6d;
+} 
+
+
+/*---------Boton Generar Outfit---------*/
+.btn {
+  width: 12em;
+  height: 3em;
+  border-radius: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: #5c5c5c;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.divGenerarOutfit{
+  margin-left: 57px;
+}
+
+.sparkle {
+  fill: #AAAAAA;
+  transition: all 200ms ease;
+}
+
+.text {
+  font-weight: 600;
+  color: #AAAAAA;
+  font-size: medium;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:hover .text {
+  color: white;
+}
+
+.btn:hover .sparkle {
+  transform: scale(1.1);
+} 
+
+.MuiList-root{
+  color: #000;
+}
+
+/*---------Barra Búsqueda---------*/
+.ui-input-container {
+  position: relative;
+  width: 300px;
+}
+
+.ui-input {
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  border: none;
+  border-bottom: 2px solid #5e5e5e;
+  outline: none;
+  background-color: transparent;
+  transition: border-color 0.3s;
+  cursor: auto;
+  color:black;
+}
+
+.ui-input:focus {
+  border-color: #8d0000;
+}
+
+.ui-input-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #8d0000;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.ui-input:focus + .ui-input-underline {
+  transform: scaleX(1);
+}
+
+.ui-input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(255, 32, 32, 0.1);
+  transition: width 0.3s;
+}
+
+.ui-input:focus ~ .ui-input-highlight {
+  width: 100%;
+}
+
+.ui-input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.ui-input:focus ~ .ui-input-icon {
+  color: #8d0000;
+}
+
+.ui-input-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.my-suggestions-container {
+  background-color: rgba(126, 126, 126, 0.705);
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  margin-top: 2px;
+}
+
+
+.my-suggestion {
+  padding: 10px;
+  backdrop-filter: blur(20px); /* Add this line to apply blur */
+  border: 1px solid #cccccc34;
+  cursor: pointer;
+  backdrop-filter: blur(20px);
+}
+
+.my-suggestion--highlighted {
+  background-color: #be2727;
+  color: black;
+}
+
+/*------ BOTON EXPLORAR TIENDA -------*/
+.fancy {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+ }
+ 
+ .fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: white;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+ }
+ 
+ .fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+ }
+ 
+
+ 
+ .fancy:hover {
+  color: black;
+  background: white;
+ }
+ 
+ .fancy:hover::before {
+  width: 0.9375rem;
+  background: black;
+ }
+ 
+ .fancy:hover .text {
+  color: black;
+  padding-left: 1.5em;
+ }
+ 
+ .fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+ }
+ 
+ .fancy:hover .bottom-key-1,
+  .fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+ }
+ 
+
+ .mainDescription{
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
+  color:white;
+  
+ }
+
+ .contentMaindesc{
+  background-color: #00000041;
+  border-radius: 30px;
+ }
+
+
+ .clamp-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* número de líneas que quieres mostrar */
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+.like-button {
+  transition: transform 0.2s ease-in-out;
+}
+
+.like-button:active {
+  transform: scale(0.9);
+}
+
+/*--------------------------------------------- */
+ul{
+  border-color: rgba(255, 255, 255, 0) !important;
+}
+
+.icon-button {
+  cursor: pointer;
+  background: none; /* Estilo opcional para quitar el fondo del botón */
+  border: none;     /* Estilo opcional para quitar el borde del botón */
+  padding: 0;       /* Estilo opcional para quitar el padding del botón */
+}
